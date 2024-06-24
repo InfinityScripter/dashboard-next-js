@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from 'react';
 import {OrganizationSwitcher, useOrganization, UserButton} from "@clerk/nextjs";
@@ -24,15 +24,15 @@ const Navbar = () => {
                                 width: "100%",
                                 maxWidth: "376px",
                             },
-                            organisationSwitcherTrigger: {
+                            organizationSwitcherTrigger: {
                                 padding: "6px",
                                 width: "100%",
-                                borderRadius: "8px",
+                                borderRadius: "6px",
                                 border: "1px solid #E5E7EB",
                                 justifyContent: "space-between",
                                 backgroundColor: "white",
                             },
-                        }
+                        },
                     }}
                 />
             </div>
