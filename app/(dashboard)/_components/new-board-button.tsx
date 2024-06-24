@@ -17,9 +17,9 @@ export function NewBoardButton({ orgId, disabled }: NewBoardButtonProps) {
     const { mutate: create, isLoading } = useApiMutation(api.board.create);
 
     const handleClick = () => {
-        create({ orgId, title: "Untitled" })
+        create({ orgId, title: "Без названия" })
             .then((id) => {
-                toast.success("Board created!");
+                toast.success("Доска создана!");
                 router.push(`/board/${id}`);
             })
             .catch(() => toast.error("Failed to create board"));
@@ -37,7 +37,7 @@ export function NewBoardButton({ orgId, disabled }: NewBoardButtonProps) {
         >
             <div />
             <Plus className="h-12 w-12 text-white stroke-1" />
-            <p className="text-sm text-white font-light">New board</p>
+            <p className="text-sm text-white font-light">Новая доска</p>
         </button>
     );
 }

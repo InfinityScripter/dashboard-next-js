@@ -7,6 +7,7 @@ import { Id } from "@/convex/_generated/dataModel";
 import { useApiMutation } from "@/hooks/useApiMutation";
 import { useAuth } from "@clerk/nextjs";
 import { formatDistanceToNow } from "date-fns";
+import { ru } from "date-fns/locale";
 import { MoreHorizontal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,9 +44,9 @@ export function BoardCard({
   );
 
   const { userId } = useAuth();
-  const authorLabel = userId === authorId ? "You" : authorName;
+  const authorLabel = userId === authorId ? "Вы" : authorName;
   const createdAtLabel = formatDistanceToNow(createdAt, {
-    addSuffix: true,
+    addSuffix: true, locale: ru,
   });
 
   const toggleFavourite = () => {
@@ -62,7 +63,7 @@ export function BoardCard({
 
   return (
     <Link href={`/boards/${id}`}>
-      <div className="group aspect-[100/127] border rounded-lg flex flex-col justify-center overflow-hidden">
+      <div className="group aspect-[100/127] border rounded-lg flex flex-col justify-center overflow-hidden shadow-md">
         <div className="relative flex-1 bg-amber-50">
           <Image src={imageUrl} alt={title} fill className="object-fit" />
           <Overlay />
