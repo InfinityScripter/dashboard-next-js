@@ -22,7 +22,7 @@ export function EmptyBoards() {
     })
       .then((id) => {
         toast.success("Board created");
-        router.push(`/board/${id}`);
+        router.push(`/boards/${id}`);
       })
       .catch(() => {
         toast.error("Failed to create board");
