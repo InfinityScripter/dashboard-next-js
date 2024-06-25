@@ -12,7 +12,7 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "./ui/alert-dialog";
-import { Input } from "./ui/input"; // Предположим, у вас есть компонент Input
+import { Input } from "./ui/input";
 
 interface RenameModalProps {
     children: React.ReactNode;

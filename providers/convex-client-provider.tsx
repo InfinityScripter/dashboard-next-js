@@ -2,6 +2,7 @@
 
 import { ClerkProvider , useAuth} from "@clerk/nextjs";
 import {ConvexProviderWithClerk} from "convex/react-clerk";
+import { ruRU } from '@clerk/localizations';
 import {
     AuthLoading,
     Authenticated,
@@ -19,7 +20,7 @@ const convex = new ConvexReactClient(convexUrl);
 
 export const ConvexClientProvider = ({ children }: ConvexClientProviderProps) => {
     return (
-        <ClerkProvider>
+        <ClerkProvider localization={ruRU}>
             <ConvexProviderWithClerk useAuth={useAuth} client={convex}>
                     <Authenticated>
                         {children}
